@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+.env*/
+
+# Build
+build/
+dist/
+*.spec
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# App local data (templates cache will be under user home,无需忽略)
