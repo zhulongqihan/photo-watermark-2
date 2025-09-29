@@ -11,11 +11,20 @@ from PySide6.QtWidgets import (
     QComboBox, QSpinBox, QCheckBox, QMessageBox, QGroupBox, QFormLayout, QMenuBar
 )
 
-from watermarking import (
-    WatermarkConfig, TextStyle, ExportOptions, NamingRule,
-    apply_watermark, resize_for_export, export_image, find_default_font
-)
-import templates as tpl
+try:
+    from .watermarking import (
+        WatermarkConfig, TextStyle, ExportOptions, NamingRule,
+        apply_watermark, resize_for_export, export_image, find_default_font
+    )
+    from . import templates as tpl
+except ImportError:
+    from watermarking import (
+        WatermarkConfig, TextStyle, ExportOptions, NamingRule,
+        apply_watermark, resize_for_export, export_image, find_default_font
+    )
+    import templates as tpl
+
+
 
 SUPPORTED_INPUT = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"}
 
